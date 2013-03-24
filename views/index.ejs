@@ -87,13 +87,15 @@
     <script src="js/bootstrap-carousel.js"></script>
     <script src="js/bootstrap-typeahead.js"></script>
     <script src="js/application.js"></script>
-    <script type="text/javascript" src="js/jquery.lightbox-0.5.js"></script>
     
-    <!-- Ativando o jQuery lightBox plugin -->
+    <!-- twitter init -->
     <script type="text/javascript">
-	    $(function() {
-	        $('#gallery a').lightBox();
-	    });
+			  $.ajax({
+				  type: "GET",
+				  url: "tweets"
+				}).done(function( msg ) {
+				  $("#twitter").text(msg.tweet);
+				});
     </script>
     
   </body>
