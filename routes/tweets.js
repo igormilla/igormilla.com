@@ -3,18 +3,8 @@
  * GET home page.
  */
 
-exports.tweets = function (req, res){
-	var data = {};
-	data.title = 'Igor Milla';
-	res.send(data);
-	
-}
-
-	
-
-
-/*
- * var twitter = require('mtwitter'),
+exports.getTweet = function (req, res){
+	var twitter = require('mtwitter'),
 		twit 	= new twitter({
 		  consumer_key: 'cZB4v8Og1c3oQ4Ys10mRoA',
 		  consumer_secret: 'xAbzelwowUrSkIvtU3BLkakhqSyxWd905GiQGJFV7H8',
@@ -22,9 +12,104 @@ exports.tweets = function (req, res){
 		  access_token_secret: 'Yh2SjHCjEz5nLMQRX7o0fimLayRaEv0qPaxJNhElcI'
 		});
 	
-	twit.verifyCredentials(function (err, data) {
-		res.send(data);
-	  });	
- * 
- * 
- */
+	twit.getUserTimeline(function (err, data) {
+		
+		var response = {};
+		response.time = relative_time(data[0].created_at);
+		response.tweet = data[0].text;
+		
+		res.writeHead(200, {'content-type': 'text/json' });
+	    res.write( JSON.stringify(response) );
+	    res.end('\n');
+		
+	  });
+	
+	
+	
+	
+	function relative_time(time_value) {
+		var monthDict = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+        var values = time_value.split(" "),
+            parsed_date = Date.parse(values[1] + " " + values[2] + ", " + values[5] + " " + values[3]),
+            date = new Date(parsed_date),
+            relative_to = (arguments.length > 1) ? arguments[1] : new Date(),
+            delta = parseInt((relative_to.getTime() - parsed_date) / 1000),
+            r = '';
+        
+        function formatTime(date) {
+            var hour = date.getHours(),
+                min = date.getMinutes() + "",
+                ampm = 'AM';
+            
+            if (hour == 0) {
+                hour = 12;
+            } else if (hour == 12) {
+                ampm = 'PM';
+            } else if (hour > 12) {
+                hour -= 12;
+                ampm = 'PM';
+            }
+            
+            if (min.length == 1) {
+                min = '0' + min;
+            }
+            
+            return hour + ':' + min + ' ' + ampm;
+        }
+        
+        function formatDate(date) {
+            var ds = date.toDateString().split(/ /),
+                mon = monthDict[date.getMonth()],
+                day = date.getDate()+'',
+                dayi = parseInt(day),
+                year = date.getFullYear(),
+                thisyear = (new Date()).getFullYear(),
+                th = 'th';
+            
+            // anti-'th' - but don't do the 11th, 12th or 13th
+            if ((dayi % 10) == 1 && day.substr(0, 1) != '1') {
+                th = 'st';
+            } else if ((dayi % 10) == 2 && day.substr(0, 1) != '1') {
+                th = 'nd';
+            } else if ((dayi % 10) == 3 && day.substr(0, 1) != '1') {
+                th = 'rd';
+            }
+            
+            if (day.substr(0, 1) == '0') {
+                day = day.substr(1);
+            }
+            
+            return mon + ' ' + day + th + (thisyear != year ? ', ' + year : '');
+        }
+        
+        delta = delta + (relative_to.getTimezoneOffset() * 60);
+
+        if (delta < 5) {
+            r = 'less than 5 seconds ago';
+        } else if (delta < 30) {
+            r = 'half a minute ago';
+        } else if (delta < 60) {
+            r = 'less than a minute ago';
+        } else if (delta < 120) {
+            r = '1 minute ago';
+        } else if (delta < (45*60)) {
+            r = (parseInt(delta / 60)).toString() + ' minutes ago';
+        } else if (delta < (2*90*60)) { // 2* because sometimes read 1 hours ago
+            r = 'about 1 hour ago';
+        } else if (delta < (24*60*60)) {
+            r = 'about ' + (parseInt(delta / 3600)).toString() + ' hours ago';
+        } else {
+            if (delta < (48*60*60)) {
+                r = formatTime(date) + ' yesterday';
+            } else {
+                r = formatTime(date) + ' ' + formatDate(date);
+                // r = (parseInt(delta / 86400)).toString() + ' days ago';
+            }
+        }
+
+        return r;
+    }
+	
+	
+};
+
