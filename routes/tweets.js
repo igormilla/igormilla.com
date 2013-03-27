@@ -15,19 +15,47 @@ exports.getTweet = function (req, res){
 	twit.getUserTimeline(function (err, data) {
 		
 		var response = {};
-		response.time = relative_time(data[0].created_at);
-		response.tweet = data[0].text;
+		response.time = relativeTime(data[0].created_at) + " &#151;";
+		response.tweet = ify.clean(data[0].text);
 		
-		res.writeHead(200, {'content-type': 'text/json' });
+		res.writeHead(200, {'content-type': 'text/json'} );
 	    res.write( JSON.stringify(response) );
 	    res.end('\n');
 		
 	  });
 	
 	
+	var ify = function() {
+	      var entities = {
+	          '"' : '&quot;',
+	          '&' : '&amp;',
+	          '<' : '&lt;',
+	          '>' : '&gt;'
+	      };
+
+	      return {
+	        "link": function(t) {
+	          return t.replace(/[a-z]+:\/\/[a-z0-9-_]+\.[a-z0-9-_:~%&\?#\/.=]+[^:\.,\)\s*$]/ig, function(m) {
+	            return '<a href="' + m + '">' + ((m.length > 25) ? m.substr(0, 24) + '...' : m) + '</a>';
+	          });
+	        },
+	        "at": function(t) {
+	          return t.replace(/(^|[^\w]+)\@([a-zA-Z0-9_]{1,15}(\/[a-zA-Z0-9-_]+)*)/g, function(m, m1, m2) {
+	            return m1 + '@<a href="http://twitter.com/' + m2 + '">' + m2 + '</a>';
+	          });
+	        },
+	        "hash": function(t) {
+	          return t.replace(/(^|[^&\w'"]+)\#([a-zA-Z0-9_]+)/g, function(m, m1, m2) {
+	            return m1 + '#<a href="http://search.twitter.com/search?q=%23' + m2 + '">' + m2 + '</a>';
+	          });
+	        },
+	        "clean": function(tweet) {
+	          return this.hash(this.at(this.link(tweet)));
+	        }
+	      };
+	    }();
 	
-	
-	function relative_time(time_value) {
+	function relativeTime(time_value) {
 		var monthDict = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
         var values = time_value.split(" "),
             parsed_date = Date.parse(values[1] + " " + values[2] + ", " + values[5] + " " + values[3]),

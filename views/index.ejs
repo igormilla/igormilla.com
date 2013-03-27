@@ -94,7 +94,10 @@
 				  type: "GET",
 				  url: "tweets"
 				}).done(function( msg ) {
-				  $("#tweet").text(msg.tweet);
+				  $("#tweet-loading").remove();		
+				  $("#tweet-body").show();		  
+				  $("#tweet-text").html(msg.tweet);
+				  $("#tweet-time").html(msg.time);
 				});
     </script>
     

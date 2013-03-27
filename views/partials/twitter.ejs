@@ -1,11 +1,13 @@
 <div class="row">
     <div class="span6">
         <div id="twitter" class="breadcrumb">
-            <blockquote> 
-            	<p id="tweet">
-            		Please wait while my tweets load <img src="img/ajax-loader.gif" alt="loading"/>
-            	</p>	
-            </blockquote> 
+          	<p id="tweet-loading">
+          		Please wait while my tweets load <img src="img/ajax-loader.gif" alt="loading"/>
+          	</p>
+          	<div id="tweet-body" style="display:none; text-align:right">
+          		<p id="tweet-text">.</p>
+          		<small id="tweet-time" class="muted">.</small>
+          	</div>
             <div class="clearfix"></div>
         </div>
 	</div><!--/span6-->
