@@ -108,7 +108,7 @@
 				 $("#lastfm-loading").remove();
 				 $("#lastfm-stream").prepend(data);
 				 var time = moment.unix( $("#utc-time").text() ).fromNow();
-				 $("#utc-time").text(time);
+				 $("#utc-time").html("&#151; " + time);
 				});
     </script>
     

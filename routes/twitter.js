@@ -117,7 +117,7 @@ exports.getStream = function (req, res){
 	twitter.getUserTimeline(function (err, data) {
 		console.log(data);
 		var response = {};
-		response.time = relativeTime(data[0].created_at) + " &#151;";
+		response.time = "&#151; " + relativeTime(data[0].created_at) ;
 		response.tweet = ify.clean(data[0].text);
 		res.render('partials/twitter/twitter-stream', response);
 	 });
