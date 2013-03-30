@@ -60,7 +60,7 @@
             	{{- include partials/languages.ejs -}} 
         </div>
         <div id="column-2" class="span6">
-      	    {{- include partials/twitter.ejs -}}
+      	    {{- include partials/twitter/twitter.ejs -}}
       	    {{- include partials/lastfm/lastfm.ejs -}}
 						{{- include partials/picassa.ejs -}}
         </div>
@@ -93,11 +93,9 @@
 			 $.ajax({
 				  type: "GET",
 				  url: "twitter"
-				}).done(function( msg ) {
-				  $("#tweet-loading").remove();		
-				  $("#tweet-body").show();		  
-				  $("#tweet-text").html(msg.tweet);
-				  $("#tweet-time").html(msg.time);
+				}).done(function( data ) {
+				  $("#twitter-loading").remove();
+				  $("#twitter-stream").prepend(data);
 				});
     </script>
     

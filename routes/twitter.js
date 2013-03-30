@@ -115,15 +115,11 @@ exports.getStream = function (req, res){
 	    };
 	
 	twitter.getUserTimeline(function (err, data) {
-		
+		console.log(data);
 		var response = {};
 		response.time = relativeTime(data[0].created_at) + " &#151;";
 		response.tweet = ify.clean(data[0].text);
-		
-		res.writeHead(200, {'content-type': 'text/json'} );
-	    res.write( JSON.stringify(response) );
-	    res.end('\n');
-		
+		res.render('partials/twitter/twitter-stream', response);
 	 });
 };
 
