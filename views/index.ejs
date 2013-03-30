@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title><%= title %></title>
+    <title>Igor Milla</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="Igor Milla">
@@ -14,7 +14,6 @@
     <link rel="stylesheet" title="bootstrap" href="css/bootstrap.css">
     <link rel="stylesheet" title="bootstrap" href="css/elusive-webfont.css">
     <link rel="stylesheet" href="css/bootstrap-responsive.css">
-    <link rel="stylesheet" href="css/jquery.lightbox-0.5.css" media="screen" />
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -53,16 +52,17 @@
       <div class="row">
       	<div id="column-1" class="span6">
               <div class="row">
-									<%- include partials/about.ejs -%>
-                  <%- include partials/social.ejs -%>
+									{{- include partials/about.ejs -}}
+                  {{- include partials/social.ejs -}}
               </div>
-							<%- include partials/work.ejs -%>
-							<%- include partials/skills.ejs -%>    
-            	<%- include partials/languages.ejs -%> 
+							{{- include partials/work.ejs -}}
+							{{- include partials/skills.ejs -}}    
+            	{{- include partials/languages.ejs -}} 
         </div>
         <div id="column-2" class="span6">
-      	    <%- include partials/twitter.ejs -%>
-						<%- include partials/picassa.ejs -%>
+      	    {{- include partials/twitter.ejs -}}
+      	    {{- include partials/lastfm/lastfm.ejs -}}
+						{{- include partials/picassa.ejs -}}
         </div>
 			</div>
 			
@@ -87,7 +87,7 @@
     <script src="js/bootstrap-carousel.js"></script>
     <script src="js/bootstrap-typeahead.js"></script>
     <script src="js/application.js"></script>
-    
+     <script src="js/moment.js"></script>
     <!-- twitter init -->
     <script type="text/javascript">
 			 $.ajax({
@@ -98,6 +98,19 @@
 				  $("#tweet-body").show();		  
 				  $("#tweet-text").html(msg.tweet);
 				  $("#tweet-time").html(msg.time);
+				});
+    </script>
+    
+    <!-- lastfm init -->
+    <script type="text/javascript">
+			 $.ajax({
+				  type: "GET",
+				  url: "lastfm/stream"
+				}).done( function( data ) {
+				 $("#lastfm-loading").remove();
+				 $("#lastfm-stream").prepend(data);
+				 var time = moment.unix( $("#utc-time").text() ).fromNow();
+				 $("#utc-time").text(time);
 				});
     </script>
     

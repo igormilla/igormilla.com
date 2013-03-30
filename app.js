@@ -5,6 +5,10 @@ var express = require('express')
   , http = require('http')
   , path = require('path');
 
+var ejs = require('ejs');
+	ejs.open = '{{';
+	ejs.close = '}}';
+
 var app = express();
 
 app.configure(function(){
