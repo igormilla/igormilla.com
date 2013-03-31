@@ -115,7 +115,6 @@ exports.getStream = function (req, res){
 	    };
 	
 	twitter.getUserTimeline(function (err, data) {
-		console.log(data);
 		var response = {};
 		response.time = "&#151; " + relativeTime(data[0].created_at) ;
 		response.tweet = ify.clean(data[0].text);

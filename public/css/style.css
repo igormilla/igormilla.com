@@ -1,5 +1,6 @@
 body {
   padding: 50px;
+	background: url("../img/3.png") repeat scroll 0 0 transparent;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 a {

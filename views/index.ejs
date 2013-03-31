@@ -60,6 +60,7 @@
             	{{- include partials/languages.ejs -}} 
         </div>
         <div id="column-2" class="span6">
+      	    {{- include partials/wikipedia.ejs -}}
       	    {{- include partials/twitter/twitter.ejs -}}
       	    {{- include partials/lastfm/lastfm.ejs -}}
 						{{- include partials/picassa.ejs -}}
@@ -67,7 +68,8 @@
 			</div>
 			
 			<div class="row-fluid">
-				<div class="span12 breadcrumb">
+				<div class="breadcrumb">
+				<p class="text-center"> igor (fsp) milla. all rights reserved. 2010&#151;2013</p>
 				</div>
 			</div>
     </div>
@@ -108,7 +110,7 @@
 				 $("#lastfm-loading").remove();
 				 $("#lastfm-stream").prepend(data);
 				 var time = moment.unix( $("#utc-time").text() ).fromNow();
-				 $("#utc-time").html("&#151; " + time);
+				 $("#utc-time").html("Listened &#151; " + time);
 				});
     </script>
     
