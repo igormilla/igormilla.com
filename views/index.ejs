@@ -12,7 +12,6 @@
 
 		<!-- Le styles -->
     <link rel="stylesheet" title="bootstrap" href="css/bootstrap.css">
-    <link rel="stylesheet" title="bootstrap" href="css/elusive-webfont.css">
     <link rel="stylesheet" href="css/bootstrap-responsive.css">
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -26,28 +25,7 @@
   </head>
 
   <body>
-
-    <div class="navbar navbar-fixed-top hidden-desktop">
-      <div class="navbar-inner">
-        <div class="container">
-          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </a>
-          <a class="brand" href="#">Igor Milla</a>
-          <div class="nav-collapse">
-            <ul class="nav">
-              <li><a href="#" onClick="$('html,body').animate({scrollTop: $('#work-experience').offset().top}, 1500);">Work experience</a></li>
-              <li><a href="#" onClick="$('html,body').animate({scrollTop: $('#skills').offset().top}, 1500);">Skills</a></li>
-              <li><a href="#portifolio" onClick="$('html,body').animate({scrollTop: $('#portifolio').offset().top}, 1500);">Portifolios</a></li>
-              <li><a href="#education" onClick="$('html,body').animate({scrollTop: $('#education').offset().top}, 1500);">Education</a></li>
-            </ul>
-          </div><!--/.nav-collapse -->
-        </div>
-      </div>
-    </div>
-    
+  
     <div class="container">
       <div class="row">
       	<div id="column-1" class="span6">
@@ -81,58 +59,11 @@
 
     <!-- Le javascript -->
 		<script src="js/jquery.js"></script>
-    <script src="js/bootstrap-transition.js"></script>
-    <script src="js/bootstrap-alert.js"></script>
-    <script src="js/bootstrap-modal.js"></script>
-    <script src="js/bootstrap-dropdown.js"></script>
-    <script src="js/bootstrap-scrollspy.js"></script>
-    <script src="js/bootstrap-tab.js"></script>
     <script src="js/bootstrap-tooltip.js"></script>
-    <script src="js/bootstrap-popover.js"></script>
-    <script src="js/bootstrap-button.js"></script>
-    <script src="js/bootstrap-collapse.js"></script>
-    <script src="js/bootstrap-carousel.js"></script>
-    <script src="js/bootstrap-typeahead.js"></script>
-    <script src="js/application.js"></script>
-     <script src="js/moment.js"></script>
-    <!-- twitter init -->
-    <script type="text/javascript">
-			 $.ajax({
-				  type: "GET",
-				  url: "twitter"
-				}).done(function( data ) {
-				  $("#twitter-loading").remove();
-				  $("#twitter-stream").prepend(data);
-				});
-    </script>
-    
-    <!-- lastfm init -->
-    <script type="text/javascript">
-			 $.ajax({
-				  type: "GET",
-				  url: "lastfm/stream"
-				}).done( function( data ) {
-				 $("#lastfm-loading").remove();
-				 $("#lastfm-stream").prepend(data);
-				 var time = moment.unix( $("#utc-time").text() ).fromNow();
-				 $("#utc-time").html("Listened &#151; " + time);
-				});
-    </script>
-    
-    
-		<script type="text/javascript">
-		
-		  var _gaq = _gaq || [];
-		  _gaq.push(['_setAccount', 'UA-18975696-2']);
-		  _gaq.push(['_trackPageview']);
-		
-		  (function() {
-		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-		  })();
-		
-		</script>
+    <script src="js/moment.js"></script>
+		<script src="js/application.js"></script>
+    <script src="js/ga.js"></script>
+   
   </body>
 </html>
 
