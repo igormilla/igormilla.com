@@ -4,6 +4,11 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
+#portifolio{
+	padding:0 0 15px 0;
+	background: transparent;
+}
+
 h1 {
   font-family: 'Dancing Script', Georgia, Times, serif;
   font-size: 59px;
