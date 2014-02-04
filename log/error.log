@@ -8045,3 +8045,11 @@
 [Mon Feb 03 23:07:35 2014] [error] (111)Connection refused: proxy: HTTP: attempt to connect to 127.0.0.1:8080 (localhost) failed
 [Mon Feb 03 23:07:35 2014] [error] ap_proxy_connect_backend disabling worker for (localhost)
 [Mon Feb 03 23:07:35 2014] [error] proxy: HTTP: disabled connection for (localhost)
+[Tue Feb 04 00:00:39 2014] [error] [client 77.224.87.35] (20014)Internal error: proxy: error reading status line from remote server localhost:8080, referer: http://igormilla.com/
+[Tue Feb 04 00:00:39 2014] [error] (111)Connection refused: proxy: HTTP: attempt to connect to 127.0.0.1:8080 (localhost) failed
+[Tue Feb 04 00:00:39 2014] [error] ap_proxy_connect_backend disabling worker for (localhost)
+[Tue Feb 04 00:00:40 2014] [error] proxy: HTTP: disabled connection for (localhost)
+[Tue Feb 04 00:15:21 2014] [error] [client 77.224.87.35] (20014)Internal error: proxy: error reading status line from remote server localhost:8080, referer: http://igormilla.com/
+[Tue Feb 04 00:15:21 2014] [error] (111)Connection refused: proxy: HTTP: attempt to connect to 127.0.0.1:8080 (localhost) failed
+[Tue Feb 04 00:15:21 2014] [error] ap_proxy_connect_backend disabling worker for (localhost)
+[Tue Feb 04 00:15:22 2014] [error] proxy: HTTP: disabled connection for (localhost)
