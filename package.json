@@ -11,6 +11,8 @@
     "less-middleware": "*",
     "mtwitter": "*",
     "lastfm": "*",
-    "user-stream" : "*"
+    "user-stream" : "*",
+    "mongodb" : "*",
+    "mongoose" : "*"
   }
 }
