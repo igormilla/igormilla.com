@@ -18,7 +18,7 @@ mongoose.connect('mongodb://localhost/test');
 
 var db = mongoose.connection;
 
-var Tweet = require('./models/tweet').Tweet;
+var Tweet = require('../models/tweet').Tweet;
 
 //listen stream data
 stream.on('data', function(json) {
