@@ -1,13 +1,14 @@
 var express = require('express')
   , routes = require('./routes')
+  , twitterMap = require('./routes/projects/twitterMap')
   , twitter = require('./routes/twitter')
   , lastfm = require('./routes/lastfm')
   , http = require('http')
   , path = require('path');
 
 var ejs = require('ejs');
-	ejs.open = '{{';
-	ejs.close = '}}';
+ejs.open = '{{';
+ejs.close = '}}';
 
 var app = express();
 
@@ -31,6 +32,7 @@ app.configure('development', function(){
 app.get('/', routes.index);
 app.get('/twitter', twitter.getStream);
 app.get('/lastfm/stream', lastfm.getStream);
+app.get('/map', twitterMap.getTweets);
 //app.get('/lastfm/events', lastfm.getEvents);
 
 

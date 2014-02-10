@@ -8053,3 +8053,32 @@
 [Tue Feb 04 00:15:21 2014] [error] (111)Connection refused: proxy: HTTP: attempt to connect to 127.0.0.1:8080 (localhost) failed
 [Tue Feb 04 00:15:21 2014] [error] ap_proxy_connect_backend disabling worker for (localhost)
 [Tue Feb 04 00:15:22 2014] [error] proxy: HTTP: disabled connection for (localhost)
+[Sun Feb 09 15:12:08 2014] [error] (111)Connection refused: proxy: HTTP: attempt to connect to 127.0.0.1:8080 (localhost) failed
+[Sun Feb 09 15:12:08 2014] [error] ap_proxy_connect_backend disabling worker for (localhost)
+[Sun Feb 09 15:12:09 2014] [error] proxy: HTTP: disabled connection for (localhost)
+[Sun Feb 09 15:12:12 2014] [error] proxy: HTTP: disabled connection for (localhost)
+[Sun Feb 09 15:12:12 2014] [error] proxy: HTTP: disabled connection for (localhost)
+[Sun Feb 09 15:26:45 2014] [error] (111)Connection refused: proxy: HTTP: attempt to connect to 127.0.0.1:8080 (localhost) failed
+[Sun Feb 09 15:26:45 2014] [error] ap_proxy_connect_backend disabling worker for (localhost)
+[Sun Feb 09 15:27:31 2014] [error] proxy: HTTP: disabled connection for (localhost)
+[Sun Feb 09 15:47:43 2014] [error] (111)Connection refused: proxy: HTTP: attempt to connect to 127.0.0.1:8080 (localhost) failed
+[Sun Feb 09 15:47:43 2014] [error] ap_proxy_connect_backend disabling worker for (localhost)
+[Sun Feb 09 15:48:37 2014] [error] proxy: HTTP: disabled connection for (localhost)
+[Sun Feb 09 15:50:43 2014] [error] (111)Connection refused: proxy: HTTP: attempt to connect to 127.0.0.1:8080 (localhost) failed
+[Sun Feb 09 15:50:43 2014] [error] ap_proxy_connect_backend disabling worker for (localhost)
+[Sun Feb 09 16:24:04 2014] [error] (111)Connection refused: proxy: HTTP: attempt to connect to 127.0.0.1:8080 (localhost) failed
+[Sun Feb 09 16:24:04 2014] [error] ap_proxy_connect_backend disabling worker for (localhost)
+[Sun Feb 09 16:28:45 2014] [error] (111)Connection refused: proxy: HTTP: attempt to connect to 127.0.0.1:8080 (localhost) failed
+[Sun Feb 09 16:28:45 2014] [error] ap_proxy_connect_backend disabling worker for (localhost)
+[Sun Feb 09 16:55:19 2014] [error] (111)Connection refused: proxy: HTTP: attempt to connect to 127.0.0.1:8080 (localhost) failed
+[Sun Feb 09 16:55:19 2014] [error] ap_proxy_connect_backend disabling worker for (localhost)
+[Sun Feb 09 16:55:53 2014] [error] proxy: HTTP: disabled connection for (localhost)
+[Sun Feb 09 16:55:56 2014] [error] proxy: HTTP: disabled connection for (localhost)
+[Sun Feb 09 17:43:37 2014] [error] (111)Connection refused: proxy: HTTP: attempt to connect to 127.0.0.1:8080 (localhost) failed
+[Sun Feb 09 17:43:37 2014] [error] ap_proxy_connect_backend disabling worker for (localhost)
+[Sun Feb 09 17:55:20 2014] [error] (111)Connection refused: proxy: HTTP: attempt to connect to 127.0.0.1:8080 (localhost) failed
+[Sun Feb 09 17:55:20 2014] [error] ap_proxy_connect_backend disabling worker for (localhost)
+[Sun Feb 09 17:55:20 2014] [error] proxy: HTTP: disabled connection for (localhost)
+[Sun Feb 09 18:03:07 2014] [error] [client 77.224.87.35] (20014)Internal error: proxy: error reading status line from remote server localhost:8080
+[Sun Feb 09 18:03:07 2014] [error] [client 77.224.87.35] proxy: Error reading from remote server returned by /map
+[Sun Feb 09 18:04:20 2014] [error] [client 77.224.87.35] (20014)Internal error: proxy: error reading status line from remote server localhost:8080
