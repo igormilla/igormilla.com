@@ -8,12 +8,15 @@ exports.getTweets = function(req, res){
   var Tweet = require('../../models/tweet').Tweet;
   
   Tweet.find({}, function (err, tweets) {
-    tweets = tweets.map(function (tweet) {
-        return tweet.toObject();
+   var tweetsArray = [];
+   tweetsArray.push(['latitude', 'longitude', 'tweet', 'size']); 
+   tweets.map(function (tweet) {
+        var t = tweet.toObject();
+        tweetsArray.push([tweet.coordinates[1], tweet.coordinates[0], tweet.tweet, 1]);
     });
+    db.close();
     var response = {};
-    response.tweets = tweets;
-    response.yay = 'YAY!!!';
+    response.tweets = tweetsArray;
     res.render('partials/map/lonelyPeople', response);
   });
   

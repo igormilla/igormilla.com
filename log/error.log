@@ -8095,3 +8095,7 @@
 [Mon Feb 10 01:34:38 2014] [error] proxy: HTTP: disabled connection for (localhost)
 [Mon Feb 10 01:34:39 2014] [error] proxy: HTTP: disabled connection for (localhost)
 [Mon Feb 10 01:34:42 2014] [error] proxy: HTTP: disabled connection for (localhost)
+[Mon Feb 10 23:11:08 2014] [error] [client 77.224.87.35] (20014)Internal error: proxy: error reading status line from remote server localhost:8080
+[Mon Feb 10 23:11:08 2014] [error] [client 77.224.87.35] proxy: Error reading from remote server returned by /map
+[Mon Feb 10 23:12:03 2014] [error] [client 77.224.87.35] (20014)Internal error: proxy: error reading status line from remote server localhost:8080
+[Mon Feb 10 23:12:03 2014] [error] [client 77.224.87.35] proxy: Error reading from remote server returned by /map
