@@ -17,7 +17,11 @@ exports.getTweets = function(req, res){
     db.close();
     var response = {};
     response.tweets = tweetsArray;
-    res.render('partials/map/lonelyPeople', response);
+    if(req.query.v === '2')
+      res.render('partials/map/lonelyPeople_v2', response);
+    else
+      res.render('partials/map/lonelyPeople', response);
+
   });
   
 
