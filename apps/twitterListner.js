@@ -8,7 +8,7 @@ var stream = new Stream({
 });
 
 var params = {
-	track : 'lonely'
+	track : 'euromaidan, євромайдан, евромайдан, pravyjsektor, hromadsketv'
 };
 //create stream
 stream.stream(params);
@@ -26,6 +26,7 @@ stream.on('data', function(json) {
 		var tmpTweet = new Tweet({
 			tweet : json.text,
 			coordinates : json.coordinates.coordinates,
+			created_at : json.created_at,
 			user : {
 				lang : json.user.lang,
 				location : json.user.location,

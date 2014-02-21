@@ -8101,3 +8101,21 @@
 [Mon Feb 10 23:12:03 2014] [error] [client 77.224.87.35] proxy: Error reading from remote server returned by /map
 [Thu Feb 13 01:03:58 2014] [error] [client 77.224.87.35] (20014)Internal error: proxy: error reading status line from remote server localhost:8080
 [Thu Feb 13 01:03:58 2014] [error] [client 77.224.87.35] proxy: Error reading from remote server returned by /map
+[Tue Feb 18 22:35:06 2014] [error] (111)Connection refused: proxy: HTTP: attempt to connect to 127.0.0.1:8080 (localhost) failed
+[Tue Feb 18 22:35:06 2014] [error] ap_proxy_connect_backend disabling worker for (localhost)
+[Tue Feb 18 22:35:37 2014] [error] proxy: HTTP: disabled connection for (localhost)
+[Tue Feb 18 22:41:46 2014] [error] (111)Connection refused: proxy: HTTP: attempt to connect to 127.0.0.1:8080 (localhost) failed
+[Tue Feb 18 22:41:46 2014] [error] ap_proxy_connect_backend disabling worker for (localhost)
+[Tue Feb 18 22:41:47 2014] [error] proxy: HTTP: disabled connection for (localhost)
+[Tue Feb 18 22:42:32 2014] [error] proxy: HTTP: disabled connection for (localhost)
+[Tue Feb 18 22:42:33 2014] [error] proxy: HTTP: disabled connection for (localhost)
+[Tue Feb 18 22:42:35 2014] [error] proxy: HTTP: disabled connection for (localhost)
+[Tue Feb 18 22:42:35 2014] [error] proxy: HTTP: disabled connection for (localhost)
+[Tue Feb 18 22:42:37 2014] [error] proxy: HTTP: disabled connection for (localhost)
+[Tue Feb 18 22:42:37 2014] [error] proxy: HTTP: disabled connection for (localhost)
+[Tue Feb 18 22:42:38 2014] [error] proxy: HTTP: disabled connection for (localhost)
+[Tue Feb 18 22:42:39 2014] [error] proxy: HTTP: disabled connection for (localhost)
+[Tue Feb 18 22:42:40 2014] [error] proxy: HTTP: disabled connection for (localhost)
+[Tue Feb 18 22:42:40 2014] [error] proxy: HTTP: disabled connection for (localhost)
+[Tue Feb 18 22:42:42 2014] [error] proxy: HTTP: disabled connection for (localhost)
+[Tue Feb 18 22:42:42 2014] [error] proxy: HTTP: disabled connection for (localhost)
