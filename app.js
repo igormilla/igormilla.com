@@ -1,12 +1,11 @@
 var express = require('express')
   , routes = require('./routes')
-  , twitterMap = require('./routes/twitter/twitterMap')
-  , twitter = require('./routes/twitter/twitter')
+  , twitter = require('./routes/twitter')
   , lastfm = require('./routes/lastfm')
   , http = require('http')
-  , path = require('path');
+  , path = require('path')
+  , ejs = require('ejs');
 
-var ejs = require('ejs');
 ejs.open = '{{';
 ejs.close = '}}';
 
@@ -33,10 +32,7 @@ app.configure('development', function(){
 app.get('/', routes.index);
 app.get('/twitter', twitter.getStream);
 app.get('/lastfm/stream', lastfm.getStream);
-app.get('/map', twitterMap.getTweets);
-//app.get('/lastfm/events', lastfm.getEvents);
-
-
+app.get('/map', twitter.getTweets);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));
