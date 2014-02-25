@@ -1,7 +1,7 @@
 var express = require('express')
   , routes = require('./routes')
-  , twitterMap = require('./routes/projects/twitterMap')
-  , twitter = require('./routes/twitter')
+  , twitterMap = require('./routes/twitter/twitterMap')
+  , twitter = require('./routes/twitter/twitter')
   , lastfm = require('./routes/lastfm')
   , http = require('http')
   , path = require('path');
