@@ -12,6 +12,7 @@
       }
     </style>
     <script type='text/javascript' src='/js/jquery.js'></script>
+    <script type='text/javascript' src='/js/gm-style.js'></script>
     <script type='text/javascript' src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
     <script type='text/javascript' src='https://www.google.com/jsapi'></script>
     <script type='text/javascript' src="/js/gm-marker-clusterer.js"></script>
@@ -20,8 +21,10 @@
     <script>
       function initialize() {
         var mapOptions = {
-          zoom: 4,
-          center: new google.maps.LatLng(48.5091823, 30.5670165)
+          zoom : 4,
+          center : new google.maps.LatLng(48.5091823, 30.5670165),
+	  mapTypeId : google.maps.MapTypeId.ROADMAP,
+	  styles : gmStyle 
         };
         var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
         var data =  {{- JSON.stringify(tweets)}};
