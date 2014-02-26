@@ -40,11 +40,9 @@ exports.getTweets = function(req, res){
   var Tweet = require('../models/tweet').Tweet;
   
   Tweet.find({}, function (err, tweets) {
-   var tweetsArray = [];
-   tweetsArray.push(['latitude', 'longitude', 'tweet', 'size']); 
-   tweets.map(function (tweet) {
-        var t = tweet.toObject();
-        tweetsArray.push([tweet.coordinates[1], tweet.coordinates[0], ify.clean(tweet.tweet)]);
+    var tweetsArray = [];
+    tweets.map(function (tweet) {
+        tweetsArray.push(tweet);
     });
     db.close();
     var response = {};

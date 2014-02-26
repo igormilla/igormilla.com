@@ -11,26 +11,39 @@
         padding: 0px
       }
     </style>
-    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+    <script type='text/javascript' src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
     <script type='text/javascript' src='https://www.google.com/jsapi'></script>
-    <script src="/js/gm-marker-clusterer.js"></script>
+    <script type='text/javascript' src="/js/gm-marker-clusterer.js"></script>
+    <script type='text/javascript' src='/js/moment.js'></script>
     <script>
       function initialize() {
-        var myLatlng = new google.maps.LatLng(48.5091823, 30.5670165);
         var mapOptions = {
           zoom: 4,
-          center: myLatlng
-        }
+          center: new google.maps.LatLng(48.5091823, 30.5670165)
+        };
         var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
         var data =  {{- JSON.stringify(tweets)}};
         var infoWindow = null;
         var markers = [];
+        
+        function getCard(tweet){
+	  var profile = "<img src='"+tweet.user.profile_image_url+"'/>";
+    	  var time = moment(tweet.created_at).fromNow();
+	  return "<div style='float:left; padding-right:20px'>"
+		+ profile 
+		+ "</div><div>" 
+		+ tweet.tweet 
+		+ "<small>&nbsp;&mdash;&nbsp;" 
+		+ time 
+		+ "</small></div>";
+
+	}
+
         for (var i = 0; i < data.length; ++i) {
-          var latlng = new google.maps.LatLng(data[i][0], data[i][1]);
           var marker = new google.maps.Marker({
-            position : latlng,
+            position : new google.maps.LatLng(data[i].coordinates[1], data[i].coordinates[0]),
             map : map,
-            title : data[i][2]
+            title : getCard(data[i])
           });
 	  infoWindow = new google.maps.InfoWindow();
           google.maps.event.addListener(marker, 'click', function(e){
