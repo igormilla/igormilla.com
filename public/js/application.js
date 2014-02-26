@@ -8,6 +8,8 @@ $.ajax({
 	}).done(function( data ) {
 		$("#twitter-loading").remove();
 		$("#twitter-stream").prepend(data);
+		var time = moment( $("#tweet-time").text() ).fromNow();
+                $("#tweet-time").html("Tweeted &#151; " + time);
 	});
 
     
