@@ -16,6 +16,7 @@
     <script type='text/javascript' src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
     <script type='text/javascript' src='https://www.google.com/jsapi'></script>
     <script type='text/javascript' src="/js/gm-marker-clusterer.js"></script>
+    <script type='text/javascript' src="/js/gm-marker-spredifier.js"></script>
     <script type='text/javascript' src='/js/moment.js'></script>
     <script type='text/javascript' src='/js/jquery.linkify.min.js'></script>
     <script>
@@ -24,9 +25,14 @@
           zoom : 4,
           center : new google.maps.LatLng(48.5091823, 30.5670165),
 	  mapTypeId : google.maps.MapTypeId.ROADMAP,
-	  styles : gmStyle 
+	  styles : gmStyle,
+          panControl: false,
+          scaleControl: false,
+	  mapTypeControl: false,
+	  streetViewControl: false
         };
         var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+	var oms = new OverlappingMarkerSpiderfier(map);
         var data =  {{- JSON.stringify(tweets)}};
         var infoWindow = null;
         var markers = [];
@@ -44,26 +50,33 @@
 		+ "</small></div>";
 
 	}
-
+        oms.addListener('click', function(marker, e){
+          infoWindow.setContent(marker.getTitle());
+          infoWindow.open(map, marker);
+	  $('.tweet').linkify();
+        });
         for (var i = 0; i < data.length; ++i) {
           var marker = new google.maps.Marker({
             position : new google.maps.LatLng(data[i].coordinates[1], data[i].coordinates[0]),
             map : map,
-            title : getCard(data[i])
+            title : getCard(data[i]),
+	    icon : {
+	      path: google.maps.SymbolPath.CIRCLE,
+	      scale: 4,
+	      strokeOpacity: 0.5,
+	      strokeColor: '#FF0066'
+	    }
           });
 	  infoWindow = new google.maps.InfoWindow({maxWidth:600});
-          google.maps.event.addListener(marker, 'click', function(e){
-            infoWindow.setContent(this.getTitle());
-            infoWindow.open(map, this);
-	    $('.tweet').linkify();
-          });
           markers.push(marker);
+	  oms.addMarker(marker);
         }
+
         var markerCluster = new MarkerClusterer(map, markers,{
-		gridSize 	: 40,
-		zoomOnClick	: true,
-		avarageCenter	: false,
-		maxZoom		: 13
+  	  gridSize : 40,
+	  zoomOnClick : true,
+	  avarageCenter : false,
+	  maxZoom : 13
 	});      
 
      }
@@ -73,6 +86,4 @@
   </head>
   <body>
     <div id="map-canvas"></div>
-  </body>
-</html>
 
