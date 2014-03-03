@@ -8,7 +8,7 @@ var stream = new Stream({
 });
 
 var params = {
-	track : 'euromaidan, євромайдан, евромайдан, pravyjsektor, hromadsketv'
+	track : 'ukraine, crimea, україна, крим, путін, украина, крым, путин, война, війна, hromadsketv'
 };
 //create stream
 stream.stream(params);
@@ -23,17 +23,36 @@ var Tweet = require('../models/tweet').Tweet;
 //listen stream data
 stream.on('data', function(json) {
 	if(json.text !== undefined && json.coordinates !== null){
-		var tmpTweet = new Tweet({
-			tweet : json.text,
-			coordinates : json.coordinates.coordinates,
-			created_at : json.created_at,
-			user : {
-				lang : json.user.lang,
-				location : json.user.location,
-				name : json.user.name,
-				profile_image_url : json.user.profile_image_url
-			}
-		});
+		var tmpTweet;
+		if(json.entities.media == null)
+			tmpTweet = new Tweet({
+				tweet : json.text,
+				coordinates : json.coordinates.coordinates,
+				created_at : json.created_at,
+				user : {
+					lang : json.user.lang,
+					screen_name :  json.user.screen_name,
+					location : json.user.location,
+					name : json.user.name,
+					profile_image_url : json.user.profile_image_url
+				}
+			});
+		else
+			tmpTweet = new Tweet({            
+                               	tweet : json.text,   
+                               	coordinates : json.coordinates.coordinates,
+                               	created_at : json.created_at,
+                               	user : {
+                                      lang : json.user.lang,
+                                      screen_name :  json.user.screen_name,
+                                      location : json.user.location,
+                                      name : json.user.name,
+                                      profile_image_url : json.user.profile_image_url
+                                      },
+				entities:{
+					media : json.entities.media[0].media_url
+				} 
+                       });
 		tmpTweet.save(function(err, savedTweet){
 			console.log(savedTweet.tweet);
 		});

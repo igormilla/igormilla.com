@@ -6,9 +6,13 @@ var TweetSchema = new mongoose.Schema({
 	created_at : Date,
 	user : {
 		lang :  String,
+		screen_name : String,
 		location : String,
 		name : String,
 		profile_image_url : String
+	},
+	entities : {
+		media : String
 	}
 });
 
