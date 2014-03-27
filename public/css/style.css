@@ -1,12 +1,12 @@
 body {
   padding: 50px;
-	background: url("../img/3.png") repeat scroll 0 0 transparent;
+  background: url("../img/3.png") repeat scroll 0 0 transparent;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 #portifolio{
-	padding:0 0 15px 0;
-	background: transparent;
+  padding:0 0 15px 0;
+  background: transparent;
 }
 
 h1 {
