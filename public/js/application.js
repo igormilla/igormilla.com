@@ -1,7 +1,6 @@
 $('.tooltip-test').tooltip();
 
 // twitter init
-
 $.ajax({
 	  type: "GET",
 	  url: "twitter"
@@ -14,8 +13,6 @@ $.ajax({
 
     
 // lastfm init
-   
-
 $.ajax({
 	  type: "GET",
 	  url: "lastfm/stream"
