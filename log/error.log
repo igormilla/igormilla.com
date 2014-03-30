@@ -8199,3 +8199,115 @@
 [Wed Feb 26 00:29:58 2014] [error] proxy: HTTP: disabled connection for (localhost)
 [Wed Feb 26 00:30:02 2014] [error] proxy: HTTP: disabled connection for (localhost)
 [Wed Feb 26 00:30:05 2014] [error] proxy: HTTP: disabled connection for (localhost)
+[Sun Mar 30 22:01:52 2014] [error] (111)Connection refused: proxy: HTTP: attempt to connect to 127.0.0.1:8080 (localhost) failed
+[Sun Mar 30 22:01:52 2014] [error] ap_proxy_connect_backend disabling worker for (localhost)
+[Sun Mar 30 22:01:53 2014] [error] proxy: HTTP: disabled connection for (localhost)
+[Sun Mar 30 22:02:15 2014] [error] proxy: HTTP: disabled connection for (localhost)
+[Sun Mar 30 22:02:16 2014] [error] proxy: HTTP: disabled connection for (localhost)
+[Sun Mar 30 22:02:17 2014] [error] proxy: HTTP: disabled connection for (localhost)
+[Sun Mar 30 22:02:17 2014] [error] proxy: HTTP: disabled connection for (localhost)
+[Sun Mar 30 22:02:19 2014] [error] proxy: HTTP: disabled connection for (localhost)
+[Sun Mar 30 22:02:19 2014] [error] proxy: HTTP: disabled connection for (localhost)
+[Sun Mar 30 22:02:21 2014] [error] proxy: HTTP: disabled connection for (localhost)
+[Sun Mar 30 22:02:21 2014] [error] proxy: HTTP: disabled connection for (localhost)
+[Sun Mar 30 22:02:24 2014] [error] proxy: HTTP: disabled connection for (localhost)
+[Sun Mar 30 22:02:24 2014] [error] proxy: HTTP: disabled connection for (localhost)
+[Sun Mar 30 22:02:28 2014] [error] proxy: HTTP: disabled connection for (localhost)
+[Sun Mar 30 22:02:29 2014] [error] proxy: HTTP: disabled connection for (localhost)
+[Sun Mar 30 22:02:30 2014] [error] proxy: HTTP: disabled connection for (localhost)
+[Sun Mar 30 22:02:31 2014] [error] proxy: HTTP: disabled connection for (localhost)
+[Sun Mar 30 22:02:32 2014] [error] proxy: HTTP: disabled connection for (localhost)
+[Sun Mar 30 22:02:33 2014] [error] proxy: HTTP: disabled connection for (localhost)
+[Sun Mar 30 22:02:55 2014] [error] [client 77.224.87.35] (104)Connection reset by peer: proxy: error reading status line from remote server localhost:8080
+[Sun Mar 30 22:02:55 2014] [error] [client 77.224.87.35] (20014)Internal error: proxy: error reading status line from remote server localhost:8080, referer: http://igormilla.com/
+[Sun Mar 30 22:02:55 2014] [error] [client 77.224.87.35] (20014)Internal error: proxy: error reading status line from remote server localhost:8080, referer: http://igormilla.com/
+[Sun Mar 30 22:02:55 2014] [error] (111)Connection refused: proxy: HTTP: attempt to connect to 127.0.0.1:8080 (localhost) failed
+[Sun Mar 30 22:02:55 2014] [error] ap_proxy_connect_backend disabling worker for (localhost)
+[Sun Mar 30 22:02:55 2014] [error] proxy: HTTP: disabled connection for (localhost)
+[Sun Mar 30 22:02:55 2014] [error] proxy: HTTP: disabled connection for (localhost)
+[Sun Mar 30 22:05:40 2014] [error] [client 77.224.87.35] (20014)Internal error: proxy: error reading status line from remote server localhost:8080, referer: http://igormilla.com/
+[Sun Mar 30 22:05:40 2014] [error] [client 77.224.87.35] (20014)Internal error: proxy: error reading status line from remote server localhost:8080, referer: http://igormilla.com/
+[Sun Mar 30 22:05:40 2014] [error] (111)Connection refused: proxy: HTTP: attempt to connect to 127.0.0.1:8080 (localhost) failed
+[Sun Mar 30 22:05:40 2014] [error] ap_proxy_connect_backend disabling worker for (localhost)
+[Sun Mar 30 22:05:40 2014] [error] proxy: HTTP: disabled connection for (localhost)
+[Sun Mar 30 22:05:44 2014] [error] proxy: HTTP: disabled connection for (localhost)
+[Sun Mar 30 22:05:44 2014] [error] proxy: HTTP: disabled connection for (localhost)
+[Sun Mar 30 22:07:11 2014] [error] [client 77.224.87.35] (20014)Internal error: proxy: error reading status line from remote server localhost:8080, referer: http://igormilla.com/
+[Sun Mar 30 22:07:11 2014] [error] [client 77.224.87.35] (20014)Internal error: proxy: error reading status line from remote server localhost:8080, referer: http://igormilla.com/
+[Sun Mar 30 22:07:11 2014] [error] (111)Connection refused: proxy: HTTP: attempt to connect to 127.0.0.1:8080 (localhost) failed
+[Sun Mar 30 22:07:11 2014] [error] ap_proxy_connect_backend disabling worker for (localhost)
+[Sun Mar 30 22:07:11 2014] [error] (111)Connection refused: proxy: HTTP: attempt to connect to 127.0.0.1:8080 (localhost) failed
+[Sun Mar 30 22:07:57 2014] [error] [client 77.224.87.35] (20014)Internal error: proxy: error reading status line from remote server localhost:8080, referer: http://igormilla.com/
+[Sun Mar 30 22:07:57 2014] [error] [client 77.224.87.35] (20014)Internal error: proxy: error reading status line from remote server localhost:8080, referer: http://igormilla.com/
+[Sun Mar 30 22:07:58 2014] [error] (111)Connection refused: proxy: HTTP: attempt to connect to 127.0.0.1:8080 (localhost) failed
+[Sun Mar 30 22:07:58 2014] [error] ap_proxy_connect_backend disabling worker for (localhost)
+[Sun Mar 30 22:07:58 2014] [error] proxy: HTTP: disabled connection for (localhost)
+[Sun Mar 30 22:07:58 2014] [error] proxy: HTTP: disabled connection for (localhost)
+[Sun Mar 30 22:07:58 2014] [error] proxy: HTTP: disabled connection for (localhost)
+[Sun Mar 30 22:07:58 2014] [error] proxy: HTTP: disabled connection for (localhost)
+[Sun Mar 30 22:07:58 2014] [error] proxy: HTTP: disabled connection for (localhost)
+[Sun Mar 30 22:07:58 2014] [error] proxy: HTTP: disabled connection for (localhost)
+[Sun Mar 30 22:07:58 2014] [error] proxy: HTTP: disabled connection for (localhost)
+[Sun Mar 30 22:07:58 2014] [error] proxy: HTTP: disabled connection for (localhost)
+[Sun Mar 30 22:07:58 2014] [error] proxy: HTTP: disabled connection for (localhost)
+[Sun Mar 30 22:08:00 2014] [error] proxy: HTTP: disabled connection for (localhost)
+[Sun Mar 30 22:08:00 2014] [error] proxy: HTTP: disabled connection for (localhost)
+[Sun Mar 30 22:08:14 2014] [error] proxy: HTTP: disabled connection for (localhost)
+[Sun Mar 30 22:08:15 2014] [error] proxy: HTTP: disabled connection for (localhost)
+[Sun Mar 30 22:08:16 2014] [error] proxy: HTTP: disabled connection for (localhost)
+[Sun Mar 30 22:08:17 2014] [error] proxy: HTTP: disabled connection for (localhost)
+[Sun Mar 30 22:08:25 2014] [error] proxy: HTTP: disabled connection for (localhost)
+[Sun Mar 30 22:08:25 2014] [error] proxy: HTTP: disabled connection for (localhost)
+[Sun Mar 30 22:08:26 2014] [error] proxy: HTTP: disabled connection for (localhost)
+[Sun Mar 30 22:08:27 2014] [error] proxy: HTTP: disabled connection for (localhost)
+[Sun Mar 30 22:08:27 2014] [error] proxy: HTTP: disabled connection for (localhost)
+[Sun Mar 30 22:08:27 2014] [error] proxy: HTTP: disabled connection for (localhost)
+[Sun Mar 30 22:08:28 2014] [error] proxy: HTTP: disabled connection for (localhost)
+[Sun Mar 30 22:08:28 2014] [error] proxy: HTTP: disabled connection for (localhost)
+[Sun Mar 30 22:08:33 2014] [error] proxy: HTTP: disabled connection for (localhost)
+[Sun Mar 30 22:08:34 2014] [error] proxy: HTTP: disabled connection for (localhost)
+[Sun Mar 30 22:08:41 2014] [error] proxy: HTTP: disabled connection for (localhost)
+[Sun Mar 30 22:08:41 2014] [error] proxy: HTTP: disabled connection for (localhost)
+[Sun Mar 30 22:08:50 2014] [error] proxy: HTTP: disabled connection for (localhost)
+[Sun Mar 30 22:08:50 2014] [error] proxy: HTTP: disabled connection for (localhost)
+[Sun Mar 30 22:08:52 2014] [error] proxy: HTTP: disabled connection for (localhost)
+[Sun Mar 30 22:08:52 2014] [error] proxy: HTTP: disabled connection for (localhost)
+[Sun Mar 30 22:09:04 2014] [error] [client 77.224.87.35] (20014)Internal error: proxy: error reading status line from remote server localhost:8080, referer: http://igormilla.com/
+[Sun Mar 30 22:09:04 2014] [error] [client 77.224.87.35] (20014)Internal error: proxy: error reading status line from remote server localhost:8080, referer: http://igormilla.com/
+[Sun Mar 30 22:09:04 2014] [error] (111)Connection refused: proxy: HTTP: attempt to connect to 127.0.0.1:8080 (localhost) failed
+[Sun Mar 30 22:09:04 2014] [error] ap_proxy_connect_backend disabling worker for (localhost)
+[Sun Mar 30 22:09:04 2014] [error] proxy: HTTP: disabled connection for (localhost)
+[Sun Mar 30 22:09:04 2014] [error] proxy: HTTP: disabled connection for (localhost)
+[Sun Mar 30 22:23:35 2014] [error] [client 77.224.87.35] (20014)Internal error: proxy: error reading status line from remote server localhost:8080, referer: http://igormilla.com/
+[Sun Mar 30 22:23:35 2014] [error] (111)Connection refused: proxy: HTTP: attempt to connect to 127.0.0.1:8080 (localhost) failed
+[Sun Mar 30 22:23:35 2014] [error] ap_proxy_connect_backend disabling worker for (localhost)
+[Sun Mar 30 22:30:58 2014] [error] (111)Connection refused: proxy: HTTP: attempt to connect to 127.0.0.1:8080 (localhost) failed
+[Sun Mar 30 22:30:58 2014] [error] ap_proxy_connect_backend disabling worker for (localhost)
+[Sun Mar 30 22:30:58 2014] [error] proxy: HTTP: disabled connection for (localhost)
+[Sun Mar 30 22:30:59 2014] [error] proxy: HTTP: disabled connection for (localhost)
+[Sun Mar 30 22:31:00 2014] [error] proxy: HTTP: disabled connection for (localhost)
+[Sun Mar 30 22:37:25 2014] [error] [client 77.224.87.35] (20014)Internal error: proxy: error reading status line from remote server localhost:8080, referer: http://igormilla.com/
+[Sun Mar 30 22:37:25 2014] [error] [client 77.224.87.35] (20014)Internal error: proxy: error reading status line from remote server localhost:8080, referer: http://igormilla.com/
+[Sun Mar 30 22:37:25 2014] [error] (111)Connection refused: proxy: HTTP: attempt to connect to 127.0.0.1:8080 (localhost) failed
+[Sun Mar 30 22:37:25 2014] [error] ap_proxy_connect_backend disabling worker for (localhost)
+[Sun Mar 30 22:37:25 2014] [error] proxy: HTTP: disabled connection for (localhost)
+[Sun Mar 30 22:40:32 2014] [error] (111)Connection refused: proxy: HTTP: attempt to connect to 127.0.0.1:8080 (localhost) failed
+[Sun Mar 30 22:40:32 2014] [error] ap_proxy_connect_backend disabling worker for (localhost)
+[Sun Mar 30 22:40:44 2014] [error] proxy: HTTP: disabled connection for (localhost)
+[Sun Mar 30 22:40:44 2014] [error] proxy: HTTP: disabled connection for (localhost)
+[Sun Mar 30 22:40:46 2014] [error] proxy: HTTP: disabled connection for (localhost)
+[Sun Mar 30 22:40:46 2014] [error] proxy: HTTP: disabled connection for (localhost)
+[Sun Mar 30 22:40:53 2014] [error] proxy: HTTP: disabled connection for (localhost)
+[Sun Mar 30 22:40:53 2014] [error] proxy: HTTP: disabled connection for (localhost)
+[Sun Mar 30 22:40:58 2014] [error] proxy: HTTP: disabled connection for (localhost)
+[Sun Mar 30 22:40:58 2014] [error] proxy: HTTP: disabled connection for (localhost)
+[Sun Mar 30 22:41:08 2014] [error] proxy: HTTP: disabled connection for (localhost)
+[Sun Mar 30 22:41:08 2014] [error] proxy: HTTP: disabled connection for (localhost)
+[Sun Mar 30 22:41:12 2014] [error] proxy: HTTP: disabled connection for (localhost)
+[Sun Mar 30 22:41:12 2014] [error] proxy: HTTP: disabled connection for (localhost)
+[Sun Mar 30 22:41:17 2014] [error] proxy: HTTP: disabled connection for (localhost)
+[Sun Mar 30 22:41:18 2014] [error] proxy: HTTP: disabled connection for (localhost)
+[Sun Mar 30 22:41:27 2014] [error] proxy: HTTP: disabled connection for (localhost)
+[Sun Mar 30 22:41:27 2014] [error] proxy: HTTP: disabled connection for (localhost)
+[Sun Mar 30 22:41:29 2014] [error] proxy: HTTP: disabled connection for (localhost)
+[Sun Mar 30 22:41:30 2014] [error] proxy: HTTP: disabled connection for (localhost)
