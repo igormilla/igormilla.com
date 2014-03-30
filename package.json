@@ -12,6 +12,7 @@
     "mtwitter": "*",
     "lastfm": "*",
     "user-stream" : "*",
+    "youtube-node" : "*",
     "mongodb" : "*",
     "mongoose" : "*"
   }
