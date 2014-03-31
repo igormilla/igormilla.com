@@ -56,6 +56,9 @@
 	  $('.tweet').linkify();
         });
         for (var i = 0; i < data.length; ++i) {
+	  var markerColor = "#FF0066";
+	  if(data[i].entities !== undefined)
+	    markerColor = "#6600FF";
           var marker = new google.maps.Marker({
             position : new google.maps.LatLng(data[i].coordinates[1], data[i].coordinates[0]),
             map : map,
@@ -64,7 +67,7 @@
 	      path: google.maps.SymbolPath.CIRCLE,
 	      scale: 4,
 	      strokeOpacity: 0.5,
-	      strokeColor: '#FF0066'
+	      strokeColor: markerColor
 	    }
           });
 	  infoWindow = new google.maps.InfoWindow({maxWidth:600});
