@@ -1,4 +1,6 @@
 function initialize() {
+  'use strict';
+
   var mapOptions = {
     zoom : 4,
     center : new google.maps.LatLng(48.5091823, 30.5670165),
@@ -18,17 +20,17 @@ function initialize() {
     var profile = "<img src='"+tweet.user.profile_image_url+"'/>";
     var time = moment(tweet.created_at).fromNow();
 
-    return "<div style='float:left; padding-right:20px'>"
-      + profile 
-      + "</div><div class='tweet' style='padding-top:5px'>" 
-      + "<b>" + tweet.user.name + "</b> &mdash; "
-      + tweet.tweet 
-      + "<small>&nbsp;&mdash;&nbsp;" 
-      + time 
-      + "</small></div>";
+    return "<div style='float:left; padding-right:20px'>" +
+      profile +
+      "</div><div class='tweet' style='padding-top:5px'>" + 
+      "<b>" + tweet.user.name + "</b> &mdash; " +
+      tweet.tweet +
+      "<small>&nbsp;&mdash;&nbsp;" + 
+      time +
+      "</small></div>";
   }
   
-  oms.addListener('click', function(marker, e){
+  oms.addListener('click', function(marker){
     infoWindow.setContent(marker.getTitle());
     infoWindow.open(map, marker);
     $('.tweet').linkify();
