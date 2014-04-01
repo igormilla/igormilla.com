@@ -11,14 +11,20 @@ function initialize() {
     mapTypeControl: false,
     streetViewControl: false
   };
-  var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
-  var oms = new OverlappingMarkerSpiderfier(map);
-  var infoWindow = null;
-  var markers = [];
 
-  function getCard(tweet){
-    var profile = "<img src='"+tweet.user.profile_image_url+"'/>";
-    var time = moment(tweet.created_at).fromNow();
+  var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions),
+      oms = new OverlappingMarkerSpiderfier(map),
+      infoWindow = new google.maps.InfoWindow({maxWidth:600}),
+      markers = [];
+
+  function getCard(tweet, hadMedia){
+    var profile = "<img src='" + tweet.user.profile_image_url + "'/>",
+        time = moment(tweet.created_at).fromNow(),
+        media = "";
+    
+    if(hasMedia){
+      media = "<img src='" + tweet.entities.media + "'/>";
+    }
 
     return "<div style='float:left; padding-right:20px'>" +
       profile +
@@ -27,7 +33,9 @@ function initialize() {
       tweet.tweet +
       "<small>&nbsp;&mdash;&nbsp;" + 
       time +
-      "</small></div>";
+      "</small></br>" + 
+      media + 
+      "</div>";
   }
   
   oms.addListener('click', function(marker){
@@ -37,15 +45,13 @@ function initialize() {
   });
   
   for (var i = 0; i < data.length; ++i) {
-    var markerColor = "#FF0066";
-    if(data[i].entities !== undefined){
-      markerColor = "#6600FF";
-    }
-    
+    var hasMedia = (data[i].entities !== undefined),
+        markerColor = hasMedia ? "#FF0066" : "#6600FF";
+   
     var marker = new google.maps.Marker({
       position : new google.maps.LatLng(data[i].coordinates[1], data[i].coordinates[0]),
       map : map,
-      title : getCard(data[i]),
+      title : getCard(data[i], hasMedia),
       icon : {
         path: google.maps.SymbolPath.CIRCLE,
         scale: 4,
@@ -54,7 +60,6 @@ function initialize() {
       }
     });
     
-    infoWindow = new google.maps.InfoWindow({maxWidth:600});
     markers.push(marker);
     oms.addMarker(marker);
   }

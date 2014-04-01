@@ -39,7 +39,7 @@ exports.getTweets = function(req, res){
   
   var Tweet = require('../models/tweet').Tweet;
   
-  Tweet.find({}).limit(100).exec(function (err, tweets) {
+  Tweet.find({}).limit(1000).exec(function (err, tweets) {
     var tweetsArray = [];
     tweets.map(function (tweet) {
         tweetsArray.push(tweet);
