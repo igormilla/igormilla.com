@@ -54,7 +54,7 @@ exports.getTweets = function(req, res){
 };
 
 exports.getStream = function (req, res){	
-  twitter.getUserTimeline(function (err, data) {
+  twitter.get("statuses/user_timeline", {screen_name : 'igormilla'}, function (err, data) {
 	var response = {};
 	response.time = "&#151; " + data[0].created_at;
 	response.tweet = ify.clean(data[0].text);

@@ -1,4 +1,3 @@
-console.log("start");
 var Stream = require('user-stream');
 var stream = new Stream({
 	consumer_key: 'cZB4v8Og1c3oQ4Ys10mRoA',
@@ -22,9 +21,10 @@ var Tweet = require('../models/tweet').Tweet;
 
 //listen stream data
 stream.on('data', function(json) {
+	"use strict";
 	if(json.text !== undefined && json.coordinates !== null){
 		var tmpTweet;
-		if(json.entities.media == null)
+		if(json.entities.media === null){
 			tmpTweet = new Tweet({
 				tweet : json.text,
 				coordinates : json.coordinates.coordinates,
@@ -37,22 +37,24 @@ stream.on('data', function(json) {
 					profile_image_url : json.user.profile_image_url
 				}
 			});
-		else
+		}
+		else{
 			tmpTweet = new Tweet({            
-                               	tweet : json.text,   
-                               	coordinates : json.coordinates.coordinates,
-                               	created_at : json.created_at,
-                               	user : {
-                                      lang : json.user.lang,
-                                      screen_name :  json.user.screen_name,
-                                      location : json.user.location,
-                                      name : json.user.name,
-                                      profile_image_url : json.user.profile_image_url
-                                      },
+				tweet : json.text,   
+				coordinates : json.coordinates.coordinates,
+				created_at : json.created_at,
+				user : {
+					lang : json.user.lang,
+					screen_name :  json.user.screen_name,
+					location : json.user.location,
+					name : json.user.name,
+					profile_image_url : json.user.profile_image_url
+				},
 				entities:{
 					media : json.entities.media[0].media_url
 				} 
-                       });
+			});
+		}
 		tmpTweet.save(function(err, savedTweet){
 			console.log(savedTweet.tweet);
 		});
