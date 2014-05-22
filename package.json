@@ -14,6 +14,7 @@
     "user-stream" : "*",
     "youtube-node" : "*",
     "mongodb" : "*",
-    "mongoose" : "*"
+    "mongoose" : "*",
+    "http-proxy" : "*"
   }
 }

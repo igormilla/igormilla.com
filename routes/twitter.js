@@ -42,7 +42,7 @@ exports.getTweets = function(req, res){
   Tweet.find({}).limit(1000).exec(function (err, tweets) {
     var tweetsArray = [];
     tweets.map(function (tweet) {
-        tweetsArray.push(tweet);
+      tweetsArray.push(tweet);
     });
     db.close();
     var response = {};

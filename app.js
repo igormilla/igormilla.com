@@ -1,10 +1,10 @@
-var express = require('express')
-  , routes = require('./routes')
-  , twitter = require('./routes/twitter')
-  , lastfm = require('./routes/lastfm')
-  , http = require('http')
-  , path = require('path')
-  , ejs = require('ejs');
+var express = require('express'),
+  routes = require('./routes'),
+  twitter = require('./routes/twitter'),
+  lastfm = require('./routes/lastfm'),
+  http = require('http'),
+  path = require('path'),
+  ejs = require('ejs');
 
 ejs.open = '{{';
 ejs.close = '}}';

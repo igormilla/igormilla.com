@@ -39,8 +39,8 @@ stream.on('data', function(json) {
 			});
 		}
 		else{
-			tmpTweet = new Tweet({            
-				tweet : json.text,   
+			tmpTweet = new Tweet({
+				tweet : json.text,
 				coordinates : json.coordinates.coordinates,
 				created_at : json.created_at,
 				user : {
@@ -52,7 +52,7 @@ stream.on('data', function(json) {
 				},
 				entities:{
 					media : json.entities.media[0].media_url
-				} 
+				}
 			});
 		}
 		tmpTweet.save(function(err, savedTweet){
