@@ -1,0 +1,26 @@
+{
+  "name": "igormilla.com",
+  "version": "0.0.1",
+  "homepage": "http://igormilla.com/",
+  "authors": [
+    "igor milla <igor.fsp.milla@gmail.com>"
+  ],
+  "description": "A personal web page",
+  "main": "app.js",
+  "moduleType": [
+    "amd",
+    "es6",
+    "node"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/bower_components",
+    "tmp",
+    "log",
+    "package.json"
+  ]
+}
