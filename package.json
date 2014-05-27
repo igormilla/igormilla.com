@@ -6,15 +6,16 @@
     "start": "app.js"
   },
   "dependencies": {
-    "express": "3.1.0",
     "ejs": "*",
-    "less-middleware": "*",
-    "mtwitter": "*",
+    "express": "3.1.0",
+    "http-proxy": "*",
     "lastfm": "*",
-    "user-stream" : "*",
-    "youtube-node" : "*",
-    "mongodb" : "*",
-    "mongoose" : "*",
-    "http-proxy" : "*"
+    "less-middleware": "*",
+    "mongodb": "*",
+    "mongoose": "*",
+    "mtwitter": "*",
+    "twitter-text": "^1.9.0",
+    "user-stream": "*",
+    "youtube-node": "*"
   }
 }

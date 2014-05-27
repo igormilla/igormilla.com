@@ -21,33 +21,33 @@ function initialize() {
     var profile = "<img src='" + tweet.user.profile_image_url + "'/>",
         time = moment(tweet.created_at).fromNow(),
         media = "";
-    
+
     if(hasMedia){
       media = "<img src='" + tweet.entities.media + "'/>";
     }
 
     return "<div style='float:left; padding-right:20px'>" +
       profile +
-      "</div><div class='tweet' style='padding-top:5px'>" + 
+      "</div><div class='tweet' style='padding-top:5px'>" +
       "<b>" + tweet.user.name + "</b> &mdash; " +
       tweet.tweet +
-      "<small>&nbsp;&mdash;&nbsp;" + 
+      "<small>&nbsp;&mdash;&nbsp;" +
       time +
-      "</small></br>" + 
-      media + 
+      "</small></br>" +
+      media +
       "</div>";
   }
-  
+
   oms.addListener('click', function(marker){
     infoWindow.setContent(marker.getTitle());
     infoWindow.open(map, marker);
     $('.tweet').linkify();
   });
-  
+
   for (var i = 0; i < data.length; ++i) {
     var hasMedia = (data[i].entities !== undefined),
         markerColor = hasMedia ? "#FF0066" : "#6600FF";
-   
+
     var marker = new google.maps.Marker({
       position : new google.maps.LatLng(data[i].coordinates[1], data[i].coordinates[0]),
       map : map,
@@ -59,7 +59,7 @@ function initialize() {
         strokeColor: markerColor
       }
     });
-    
+
     markers.push(marker);
     oms.addMarker(marker);
   }
@@ -69,7 +69,7 @@ function initialize() {
     zoomOnClick : true,
     avarageCenter : false,
     maxZoom : 13
-  });      
+  });
 
 }
 
