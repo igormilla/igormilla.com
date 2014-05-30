@@ -1,10 +1,10 @@
-var express = require('express'),
-  routes = require('./routes'),
-  twitter = require('./routes/twitter'),
-  lastfm = require('./routes/lastfm'),
-  http = require('http'),
-  path = require('path'),
-  ejs = require('ejs');
+var express     = require('express'),
+    http        = require('http'),
+    path        = require('path'),
+    ejs         = require('ejs'),
+    routes      = require('./routes'),
+    twitter     = require('./routes/twitter'),
+    lastfm      = require('./routes/lastfm');
 
 ejs.open = '{{';
 ejs.close = '}}';
@@ -20,7 +20,7 @@ app.configure(function(){
   app.use(express.logger('dev'));
   app.use(express.bodyParser());
   app.use(express.methodOverride());
-  app.use(app.router);
+ // app.use(app.router);
   app.use(require('less-middleware')(path.join(__dirname, '/public')));
   app.use(express.static(path.join(__dirname, 'public')));
 });
@@ -32,7 +32,6 @@ app.configure('development', function(){
 app.get('/', routes.index);
 app.get('/twitter', twitter.getStream);
 app.get('/lastfm/stream', lastfm.getStream);
-app.get('/map', twitter.getTweets);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));

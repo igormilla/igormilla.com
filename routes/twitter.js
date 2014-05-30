@@ -7,28 +7,6 @@ twitter 	= new twitterNode({
   access_token_secret: '29He0KV4O91hGb7VR0kOyl4Jzo5W1oODKF1UP1EHE2TRP'
 });
 
-exports.getTweets = function(req, res){
-
-  var mongoose = require('mongoose');
-  mongoose.connect('mongodb://localhost/test');
-
-  var db = mongoose.connection;
-
-  var Tweet = require('../models/tweet').Tweet;
-
-  Tweet.find({}).limit(1000).exec(function (err, tweets) {
-    var tweetsArray = [];
-    tweets.map(function (tweet) {
-      tweetsArray.push(tweet);
-    });
-    db.close();
-    var response = {};
-    response.tweets = tweetsArray;
-    res.render('partials/map/lonelyPeople', response);
-  });
-
-};
-
 exports.getStream = function (req, res){
   twitter.get("statuses/user_timeline", {screen_name : 'igormilla'}, function (err, data) {
     var response = {

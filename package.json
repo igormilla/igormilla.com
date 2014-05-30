@@ -8,14 +8,12 @@
   "dependencies": {
     "ejs": "*",
     "express": "3.1.0",
+    "grunt-forever": "^0.4.4",
     "http-proxy": "*",
     "lastfm": "*",
     "less-middleware": "*",
-    "mongodb": "*",
-    "mongoose": "*",
     "mtwitter": "*",
     "twitter-text": "^1.9.0",
-    "user-stream": "*",
     "youtube-node": "*"
   }
 }
