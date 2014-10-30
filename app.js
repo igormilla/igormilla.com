@@ -2,6 +2,7 @@ var express     = require('express'),
     http        = require('http'),
     path        = require('path'),
     ejs         = require('ejs'),
+    ghost       = require('ghost'),
     routes      = require('./routes'),
     twitter     = require('./routes/twitter'),
     lastfm      = require('./routes/lastfm');
@@ -20,7 +21,14 @@ app.configure(function(){
   app.use(express.logger('dev'));
   app.use(express.bodyParser());
   app.use(express.methodOverride());
- // app.use(app.router);
+  app.use(function (req, res, next) {
+    if ('/robots.txt' == req.url) {
+      res.type('text/plain')
+      res.send("User-agent: *\nDisallow: ");
+    } else {
+      next();
+    }
+  });
   app.use(require('less-middleware')(path.join(__dirname, '/public')));
   app.use(express.static(path.join(__dirname, 'public')));
 });
@@ -36,3 +44,9 @@ app.get('/lastfm/stream', lastfm.getStream);
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));
 });
+
+ghost().then(function(ghostServer){
+  app.use(ghostServer.config.paths.subdir, ghostServer.rootApp);
+  ghostServer.start(app);  
+});
+
